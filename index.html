@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Agenda De Contactos</title>
+</head>
+
+<body>
+
+
+    <form id="form">
+        <!-- Formulario de contactos -->
+
+        <h3>Creacion de contactos</h3>
+        <div class="formulario-datos">
+            <label class="name-input">
+                Nombre: <span class="required">*</span>
+            </label>
+            <input id="name-input" type="text" placeholder="Luis Daniel" autocomplete="off">
+            <p class="helper-text">
+                ¡Debe poseer solo letras!
+            </p>
+        </div>
+
+        <div class="formulario-datos">
+            <label class="number-input">
+                Telefono: <span class="required">*</span>
+            </label>
+            <input id="number-input" type="tlf" placeholder="0414-9853455">
+            <p class="helper-text">
+                ¡Debe tener solo numero de venezuela!
+            </p>
+        </div>
+        <button class="btn-agregar-tareas">Crear Contacto</button>
+    </form>
+
+    <h3>Contactos</h3>
+
+    <div class="list-base">
+
+        <ul id="list">
+            <!-- <li>
+                    <button class="delete-btn">X</button>
+                    <span>Emmanuel</span>
+                    <span>Numero</span>
+                    <button class="check-btn">✓</button>
+                </li> -->
+    </div>
+
+</body>
+<script src="index.js"></script>
+
+</html>
