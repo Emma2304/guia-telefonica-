@@ -9,13 +9,10 @@
 body {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: rgb(207, 209, 209);
     height: 100%;
     position: absolute;
+    background: rgb(167,178,232);
     margin: auto;
-    top: 10px;
     left: 0;
     right: 0;
     padding: 1rem;
@@ -25,8 +22,9 @@ body {
 
 h3 {
     text-align: center;
-    color: rgb(48, 44, 44);
+    color: rgb(3, 66, 114);
     font-size: 30px;
+    font-family: system-ui;
 }
 
 ul {
@@ -56,6 +54,9 @@ ul {
     align-items: center;
     gap: 1rem;
     background: #eff1f1;
+    box-shadow: 4px 4px 21px 2px rgba(0,0,0,0.55);
+    -webkit-box-shadow: 2px 7px 22px 3px rgba(0,0,0,0.55);
+    -moz-box-shadow: 4px 4px 21px 2px rgba(0,0,0,0.55);
 }
 
 #name-input {
@@ -97,6 +98,7 @@ ul {
 .number-input {
     color: #022422;
     font-size: 20px;
+    font-family: sans-serif;
 }
 
 #list {
@@ -119,7 +121,6 @@ ul {
 }
 
 #input-contact {
-    background: #bfc9c7;
     color: #17665f;
     outline: none;
     height: 2rem;
@@ -132,13 +133,13 @@ ul {
 }
 
 .list-base::-webkit-scrollbar-thumb {
-    background-color: rgb(66, 116, 83);
-    ;
+    background: rgb(142,169,180);
+    background: linear-gradient(0deg, rgba(142,169,180,1) 0%, rgba(24,121,193,1) 94%);
     border-radius: 8px;
 }
 
 .list-base {
-    border: 3px solid rgb(66, 116, 83);
+    border: 3px solid rgb(24 121 193);
     border-radius: 0.5rem;
     padding: 0 1rem;
     max-width: 80vh;
@@ -148,11 +149,12 @@ ul {
 }
 
 .btn-agregar-tareas {
-    background-color: rgb(6, 150, 37);
+    background: rgb(167,178,232);
     border: 0;
     color: white;
+    font-size: 14px;
     border-radius: 5px;
-    text-decoration: none;
+    text-transform: uppercase;
     cursor: pointer;
     height: 2rem;
     width: 20rem;
@@ -160,7 +162,7 @@ ul {
 }
 
 .btn-agregar-tareas:hover {
-    background-color: green;
+    background: linear-gradient(90deg, rgba(167,178,232,1) 0%, rgba(90,165,233,1) 50%, rgba(0,107,226,1) 100%);
 }
 
 .delete-btn {
@@ -198,6 +200,11 @@ svg {
     background-color: rgb(2, 143, 44);
 }
 
+.user-icon {
+    height: 1.6rem;
+    width: 1.5rem;
+}
+
 .helper-text {
     display: none;
     color: #db1010;
@@ -217,9 +224,26 @@ svg {
     border-bottom: 4px solid red;
 }
 
-@media (min-width: 640px) {
+@media (max-width: 1440px) {
     body {
         justify-content: center;
         align-items: center;
+    }
+
+    #form {
+        height: 18rem;
+        width: 24rem;
+    }
+}
+
+@media (min-width: 550px) {
+    body {
+        justify-content: center;
+        align-items: center;
+    }
+
+    #form {
+        height: 18rem;
+        width: 33rem;
     }
 }

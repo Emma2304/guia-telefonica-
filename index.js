@@ -2,6 +2,7 @@ const nameInput = document.querySelector('#name-input');
 const numberInput = document.querySelector('#number-input');
 const form = document.querySelector('#form');
 const list = document.querySelector('#list');
+const botonAgg = document.querySelector('.btn-agregar-tareas');
 
 const getPersonas = () => {
     list.innerHTML = localStorage.getItem('yoquiera');
@@ -16,7 +17,6 @@ const TLF_REGEX = /^([0]{1})([2,4]{1})([1,2]{1})([2,4,6]{1})([0-9]{7})$/;
 let gender = '';
 
 const validation = (validation, input) => {
-    console.log(validation);
     if (validation) {
         input.classList.remove('wrong');
         input.classList.add('correct');
