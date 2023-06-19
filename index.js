@@ -16,18 +16,32 @@ const TLF_REGEX = /^([0]{1})([2,4]{1})([1,2]{1})([2,4,6]{1})([0-9]{7})$/;
 //gender
 let gender = '';
 
-const validation = (validation, input) => {
-    if (validation) {
+// Validations
+let nameValidation = false;
+let numberValidation = false;
+
+const validation = (regexValidation, input) => {
+    botonAgg.disabled = nameValidation && numberValidation ? false : true;
+
+    if (input.value === '') {
+        input.classList.remove('wrong');
+        input.classList.remove('correct');
+        input.parentElement.children[2].classList.remove('display-text');
+        botonAgg.disabled = true
+    } else if (regexValidation) {
         input.classList.remove('wrong');
         input.classList.add('correct');
         input.parentElement.children[2].classList.remove('display-text');
-    } else {
+        botonAgg.disabled = false
+    } else if (!regexValidation) {
         input.classList.add('wrong');
         input.classList.remove('correct');
         input.parentElement.children[2].classList.add('display-text');
+        botonAgg.disabled = true
     }
-}
+};
 
+// Events
 nameInput.addEventListener('input', e => {
     const nameValidation = NAME_REGEX.test(e.target.value);
     validation(nameValidation, nameInput);
@@ -42,7 +56,7 @@ form.addEventListener('submit', async e => {
     e.preventDefault();
     const newPerson = {
         name: nameInput.value,
-        number: numberInput.value
+        number: numberInput.value,
     }
     const responseJSON = await fetch('http://localhost:3000/contactos', {
         method: 'POST',
@@ -73,7 +87,7 @@ form.addEventListener('submit', async e => {
     `;
 
     list.append(listItem);
-    form.value = '';
+
     localStorage.setItem('yoquiera', list.innerHTML);
 });
 

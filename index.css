@@ -161,6 +161,11 @@ ul {
     transition: all 0.3s ease-in;
 }
 
+.btn-agregar-tareas:disabled {
+    opacity: 50%;
+    cursor: not-allowed;
+}
+
 .btn-agregar-tareas:hover {
     background: linear-gradient(90deg, rgba(167,178,232,1) 0%, rgba(90,165,233,1) 50%, rgba(0,107,226,1) 100%);
 }
